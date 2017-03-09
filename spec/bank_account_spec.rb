@@ -28,6 +28,15 @@ describe BankAccount do
     end
   end
 
+  describe '#record_transaction' do
+    it 'records the transaction and stores in an array' do
+      account.deposit(100)
+      account.withdraw(50)
+      expect(account.balance).to eq 50
+      expect(account.transactions.length).to eq 2
+    end
+  end
+
 
 
 end
